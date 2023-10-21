@@ -52,8 +52,7 @@ echo "::group::Install build dependencies"
 	# Run "source PKGBUILD" in a subshell
 	source PKGBUILD
 	# Install build dependencies with yay
-        sudo sed -i 's/OPTIONS=\(.*\)/OPTIONS=(\1 --skipinteg)/' /etc/makepkg.conf
-	yay -S ${makedepends[*]} ${depends[*]} --needed --noconfirm --mflags "--nocheck --skippgpcheck"
+	yay -S ${makedepends[*]} ${depends[*]} --needed --noconfirm --mflags "--nocheck --skippgpcheck --skipinteg"
 )
 
 # Install extra build dependencies
