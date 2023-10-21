@@ -11,7 +11,7 @@ echo "::group::Parsing PKGBUILD"
 cp -r /pkgbuild/. .
 
 # Determine the built package filename (we can't use `basename` here ...)
-PACKAGE_FILES="$(makepkg --packagelist | rev | cut -d'/' -f 1 | rev)"
+PACKAGE_FILES="$(makepkg --packagelist --skipinteg | rev | cut -d'/' -f 1 | rev)"
 
 echo "::endgroup::"
 
@@ -67,7 +67,7 @@ echo "::endgroup::"
 echo "::group::Build packages"
 
 # Build packages
-makepkg -sfA --needed --noconfirm --nocheck --skippgpcheck
+makepkg -sfA --needed --noconfirm --nocheck --skippgpcheck --skipinteg
 
 echo "::endgroup::"
 
