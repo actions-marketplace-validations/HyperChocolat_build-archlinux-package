@@ -1,4 +1,4 @@
-name: Build linux-libre
+name: Makepkg skipinteg
 description: Build Archlinux / Manjaro package with Docker, auto resolve AUR dependencies, for AMD64 or ARM64
 branding:
   icon: package
