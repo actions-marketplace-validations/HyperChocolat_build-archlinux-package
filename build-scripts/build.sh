@@ -4,7 +4,7 @@
 #
 # - REPO_URL
 # - PACKAGE_NAME
-
+sudo sed -i 's/MAKEFLAGS="-j2"\(.*\)/MAKEFLAGS=\1"-j$(nproc)"/' /etc/makepkg.conf
 echo "::group::Parsing PKGBUILD"
 
 # Copy PKGBUILD and other required files
